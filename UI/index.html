@@ -45,7 +45,7 @@
         var oPayload = {};
         var tNow = KJUR.jws.IntDate.get('now');
               var tEnd = KJUR.jws.IntDate.get('now + 1day');
-        oPayload.iss = "cs-c513a02a-a9db-503d-8784-d72b7248de4e";
+        oPayload.iss = "cs-620aced4-86ac-50f0-9a3c-8983521ba64e";
         oPayload.sub = uuid;
         oPayload.iat = tNow;
         oPayload.exp = tEnd;
@@ -55,7 +55,7 @@
         // Sign JWT
         var sHeader = JSON.stringify(oHeader);
         var sPayload = JSON.stringify(oPayload);
-        var sJWT = KJUR.jws.JWS.sign("HS256", sHeader, sPayload, "wTQZxweRWufqxQQ8aLIV9k4PbrCGR7mOhoIVbW4dTLA=");
+        var sJWT = KJUR.jws.JWS.sign("HS256", sHeader, sPayload, "d1q4Ahvsbk0TfQDoFME+F67nYe4C1ToRhSW1N8Ky4Ds=");
         return sJWT;
 
 
@@ -74,13 +74,13 @@
 
 				var botOptions = {};
 				botOptions.logLevel = 'debug';
-				botOptions.koreAPIUrl = "https://dev-bots.kore.ai/api/";
+				botOptions.koreAPIUrl = "https://pilot-bots.kore.com/api/";
 				botOptions.bearer = "bearer xyz-------------------";
 				botOptions.speechSocketUrl = 'wss://';
 				botOptions.assertionFn = assertion;
 				botOptions.koreAnonymousFn = koreAnonymousFn;
 				botOptions.clientId   = "cs-c513a02a-a9db-503d-8784-d72b7248de4e"; // secure client-id
-				botOptions.botInfo = {name:"Lennox POC","_id":"st-2c5a6bb4-7caf-5604-a7f8-647465b3a7b8"}; // bot name is case sensitive
+				botOptions.botInfo = {name:"Lennox POC","_id":"st-c3a9d6cc-e31e-5608-9597-93d3cd7da352"}; // bot name is case sensitive
 				
 				var chatConfig={
 					botOptions:botOptions,
